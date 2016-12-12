@@ -2,7 +2,7 @@
 layout: post
 title:  "Docker Registry"
 date:   2016-12-03 02:59:59
-categories: xyz
+categories: docker_registry
 ---
 
 Hello friends,
@@ -289,5 +289,5 @@ Now, you can pull the same image from any server , by using the pull command.
 Thats all, for the Docker Registry.
 Hope, you had fun. 
 Happy coding :)
-
+    
 
