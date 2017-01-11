@@ -8,13 +8,15 @@ categories: Basic_Server_Setup
 Hello Guys, 
 Today we will learn about the basic server commands, sudo user creation, ssh properties, tmux and many more. This blog-post is for those who are new to server world .
 
-<h2>Prerequisite<h2>
+<h2>Prerequisite</h2>
 DigitalOcean droplet with root access.
 
 <h2>SSH</h2>
 
 Lets start with the very first basic command to enter your server.
+
 <code>ssh root@(your ip-address)</code>
+
 Two possible conditions:
 Firstly, it will prompt for the root password, enter the password you assign during your account creation.
 Secondly, if your have already added your <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2">ssh-key</a>(your system public-key) during the droplet creation, then it wont ask for the password and you will see the output like this:
@@ -45,7 +47,7 @@ Now, first we will see how our  ssh-config works inside the server,
 
 Now, restart the ssh service.
 
-,Now when you try to login to your server you have to pass new ssh part. 
+Now when you try to login to your server you have to pass new ssh part. 
 
 E.g:
 
