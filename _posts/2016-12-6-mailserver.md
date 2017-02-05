@@ -135,7 +135,7 @@ The usage of a reverse DNS setup for a mail server is a good solution. Some exte
 
 You can check whether there is a PTR record set for a defined IP address. The syntax of the commands on a Linux OS are:
 
-<code>hostname (your ip)</code>
+<code>host (your ip)</code>
 
 You will see the domain name as a output, in case if you dont see the domain name, then You should contact your ISP and ask him to add a PTR record for your ips.
 
@@ -144,7 +144,9 @@ Since I am using digitalocean droplet, so:
 DigitalOcean automatically configures the reverse dns entry (PTR) on their end. It will be the hostname you choose when you set up your dropplet. You can change/check this in the control panel by selecting your dropplet, then settings, then rename. As it says, changing the name there will update the PTR but not the hostname of the system, that is something you will need to do, instructions for that vary depending on the system you have installed.
 
 You can check the PTR by using the host command as follows:
-host <IP_ADDRESS>
+
+<code>host <IP_ADDRESS></code>
+
 You will have to substitute your IP address in the command above.
 Example:
 host 8.8.8.8
