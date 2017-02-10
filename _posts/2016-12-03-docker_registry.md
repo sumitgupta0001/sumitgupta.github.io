@@ -81,6 +81,61 @@ Great! At this point you've already got a full Docker registry up and running an
 
 The <code>volumes:</code> section is similar to what we did for the <code>registry</code> container. In this case it gives us a way to store the config files we'll use for Nginx on our host machine instead of inside the Docker container. The <code>:ro</code> at the end just tells Docker that the Nginx container should only have read-only access to the host filesystem. 
 
+Running docker-compose up will now start two containers at the same time: one for the Docker registry and one for Nginx.
+
+We need to configure Nginx before this will work though, so let's create a new Nginx configuration file.
+
+Create a registry.conf file:
+
+nano ~/docker-registry/nginx/registry.conf
+
+
+Copy the following into the file:
+
+{% highlight ruby %}
+
+upstream docker-registry {
+  server registry:5000;
+}
+
+server {
+  listen 443;
+  server_name myregistrydomain.com;
+
+  # SSL
+  # ssl on;
+  # ssl_certificate /etc/nginx/conf.d/domain.crt;
+  # ssl_certificate_key /etc/nginx/conf.d/domain.key;
+
+  # disable any limits to avoid HTTP 413 for large image uploads
+  client_max_body_size 0;
+
+  # required to avoid HTTP 411: see Issue #1486 (https://github.com/docker/docker/issues/1486)
+  chunked_transfer_encoding on;
+
+  location /v2/ {
+    # Do not allow connections from docker 1.5 and earlier
+    # docker pre-1.6.0 did not properly set the user agent on ping, catch "Go *" user agents
+    if ($http_user_agent ~ "^(docker\/1\.(3|4|5(?!\.[0-9]-dev))|Go ).*$" ) {
+      return 404;
+    }
+
+    # To add basic authentication to v2 use auth_basic setting plus add_header
+    # auth_basic "registry.localhost";
+    # auth_basic_user_file /etc/nginx/conf.d/registry.password;
+    # add_header 'Docker-Distribution-Api-Version' 'registry/2.0' always;
+
+    proxy_pass                          http://docker-registry;
+    proxy_set_header  Host              $http_host;   # required for docker client's sake
+    proxy_set_header  X-Real-IP         $remote_addr; # pass on real client's IP
+    proxy_set_header  X-Forwarded-For   $proxy_add_x_forwarded_for;
+    proxy_set_header  X-Forwarded-Proto $scheme;
+    proxy_read_timeout                  900;
+  }
+}
+
+{% endhighlight %}
+
 If at this stage you run docker-compose up and pass the curl command like this:
  
 <code>curl http://localhost:5043/v2/</code>
@@ -88,6 +143,17 @@ If at this stage you run docker-compose up and pass the curl command like this:
 then you will see the output as:
 
 <code>{}</code>
+
+If things are working correctly you'll see some output in your docker-compose terminal that looks like the below as well:
+
+{% highlight ruby %}
+
+registry_1 | time="2015-08-11T10:24:53.746529894Z" level=debug msg="authorizing request" environment=development http.request.host="localhost:5043" http.request.id=55c3e2a6-4f34-4b0b-bc57-11c814b4f4d3 http.request.method=GET http.request.remoteaddr=172.17.42.1 http.request.uri="/v2/" http.request.useragent="curl/7.35.0" instance.id=55634dfc-c9e0-4ec9-9872-6f4930c17759 service=registry version=v2.0.1
+    registry_1 | time="2015-08-11T10:24:53.747650205Z" level=info msg="response completed" environment=development http.request.host="localhost:5043" http.request.id=55c3e2a6-4f34-4b0b-bc57-11c814b4f4d3 http.request.method=GET http.request.remoteaddr=172.17.42.1 http.request.uri="/v2/" http.request.useragent="curl/7.35.0" http.response.contenttype="application/json; charset=utf-8" http.response.duration=8.143193ms http.response.status=200 http.response.written=2 instance.id=55634dfc-c9e0-4ec9-9872-6f4930c17759 service=registry version=v2.0.1
+    registry_1 | 172.17.0.21 - - [11/Aug/2015:10:24:53 +0000] "GET /v2/ HTTP/1.0" 200 2 "" "curl/7.35.0"
+    nginx_1    | 172.17.42.1 - - [11/Aug/2015:10:24:53 +0000] "GET /v2/ HTTP/1.1" 200 2 "-" "curl/7.35.0" "-"
+
+{% endhighlight %}
 
 <h2>Setting Up Authentication</h2>
 
