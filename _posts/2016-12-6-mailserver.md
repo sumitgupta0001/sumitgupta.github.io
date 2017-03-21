@@ -19,6 +19,7 @@ Today we will see how to create a basic mailserver, please follow my steps caref
 * postfix
 
 Assuming that DNS mapping is in place,
+for postfix basic configuration files follow my <a href="https://github.com/sumitgupta0001/mailserver_basic"> mailserver github repository</a>
 
 Lets start with an example, 
 Go to gmail, open any email from promotions or any emailer whom you trust like(paytm or amazon), then do show original mail, under that section you will find few entries like 
@@ -135,7 +136,7 @@ The usage of a reverse DNS setup for a mail server is a good solution. Some exte
 
 You can check whether there is a PTR record set for a defined IP address. The syntax of the commands on a Linux OS are:
 
-<code>host (your ip)</code>
+<code>dig -x (ip-address)</code>
 
 You will see the domain name as a output, in case if you dont see the domain name, then You should contact your ISP and ask him to add a PTR record for your ips.
 
@@ -145,11 +146,11 @@ DigitalOcean automatically configures the reverse dns entry (PTR) on their end. 
 
 You can check the PTR by using the host command as follows:
 
-<code>host <IP_ADDRESS></code>
+<code>dig -x (ip-address)</code>
 
 You will have to substitute your IP address in the command above.
 Example:
-host 8.8.8.8
+dig -x 8.8.8.8
 8.8.8.8.in-addr.arpa domain name pointer google-public-dns-a.google.com.
 
 You may also be a little confused: You can not update the PTR of an IP address you have not been assigned . The IP address you are using from DigitalOcean may be able for you to use, but it has not really been assigned in a way you can freely control as far as reverse dns goes, therefor you can't change a PTR record for an IP you don't have access to. (That's why mail servers check PTR; if you have a properly configured reverse dns record your more likely to be authorized to send mail from that IP.)
@@ -243,7 +244,90 @@ To automate the process via script use the following <a href="https://www.scottb
 
 
 
-<h1>To avoid spamming , please keep this in mind:</h1>
+<h2>Alias Creation</h2>
+
+Alias Creation are used to recieve mails on behalf of your mailserver
+<h2>Steps</h2>
+
+
+<p>Set the location of the virtual_alias_maps table. This table maps arbitrary email accounts to Linux system accounts. We will create this table at /etc/postfix/virtual. We can use the postconf command:</p>
+
+<code>sudo postconf -e 'virtual_alias_maps= hash:/etc/postfix/virtual'</code>
+
+Next, we can set up the virtual maps file. Open the file in your text editor:
+
+<code>sudo nano /etc/postfix/virtual</code>
+
+The virtual alias map table uses a very simple format. On the left, you can list any addresses that you wish to accept email for. Afterwards, separated by whitespace, enter the Linux user you'd like that mail delivered to.
+
+I am using debian as a user, so i map the address to debian.
+
+{% highlight ruby %}
+info@domain_name debian
+bounces@domain_name debian
+no-reply@domain-name debian
+alert@domain_name debian
+{% endhighlight %}
+
+this means , if someone sends mail to info@domain_name  then those mail will be delievered to debian user.
+
+We can apply the mapping by typing:
+
+<code>sudo postmap /etc/postfix/virtual</code>
+
+Restart the Postfix process to be sure that all of our changes have been applied:
+
+<code>sudo systemctl restart postfix</code>
+
+Make sure your postfix aliases :"/etc/aliases" looks like 
+
+{% highlight ruby %}
+# See man 5 aliases for format
+postmaster:    root
+root:   newsletter
+{% endhighlight %}
+
+
+here root has given its access to send mail to the newsletter, you can configure any name here, but if you change make sure you change the name from postfix config also .
+
+<code>Note</code> If you modify your alliases, then use comand 
+
+<code>sudo newaliases</code>
+
+Now if you send the mail to info@domain_name then it will be delievered to debian , you can check your mails inside /var/mail/debian.
+
+to see mails install mailutils first:
+
+<code>sudo apt-get install mailutils</code>
+
+<code>sudo mail</code>
+
+and if you are logged in as debian then you will be able to see the debian user mail.
+
+<h1>To update /etc/aliases</h1>
+
+First check your aliase location:
+
+<code>postconf alias_maps </code>
+
+then update the file
+
+after that use:
+
+<code>newaliases </code>
+
+<h1>Accessing postfix from outside</h1> 
+Suppose you are hitting your postfix server from another server, eg. in case of celery, then pass the ip of your postfix server inside the server variable(inside main sendmail file). Also add this new ip to the mynetworks(main.cf). Now since your new server doesnt have a domain name , so to avoid any error , we have to pass this ip in "/etc/postfix/header_filters". 
+Eg./^Received:.*128\.199\.xxx\.xxx.*/ IGNORE 
+
+Since this new ip doesnt have any certificates passed, so we have to add an entry of this ip to the (/etc/opendkim/TrustedHosts) of postfix server.
+So, now when this new ip hits the postfix of main server , it will allow to hit as its own trusted server.
+
+For postfix basic configuration files follow my <a href="https://github.com/sumitgupta0001/mailserver_basic"> mailserver github repository</a>
+
+<h2>Spamming</h2>
+
+Instead of all these efforts, if you still get your mails as spam , then try to avoid these practices:
 
 <h1>1. Avoid Purchased Lists</h1>
 Have you ever been tempted to grow your list by a million potential customers in no time? Have you been to forums where thousands of “targeted leads” are sold for a few bucks?
@@ -293,4 +377,7 @@ Be careful with words associated with the language of sales. If overused, they m
 Common sense will tell you that one exclamation mark per sentence is enough. Never shout at your subscribers, (e.g. “Buy my e-book now!!!”). Exclamation marks are especially risky in email subject lines.
 Never overdo the use of “ALL CAPS.” When emphasis is needed, use a maximum of one word per sentence in all capitals, never a whole sentence.
 
+
+
 <code>This is all for mailserver, happy coding :)</code>
+
