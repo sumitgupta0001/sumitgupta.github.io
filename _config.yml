@@ -10,3 +10,5 @@ github_username:  sumitgupta0001
 
 # Build settings
 markdown: kramdown
+
+theme: jekyll-theme-merlot
