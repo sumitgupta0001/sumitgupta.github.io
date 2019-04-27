@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Docker Registry"
-date:   2016-12-03 02:59:59
+date:   2016-12-30 02:59:59
 categories: docker_registry
 ---
 

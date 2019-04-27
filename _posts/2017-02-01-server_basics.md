@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Server Setup"
-date:   2016-12-26 02:59:59
+date:   2017-02-01 02:59:59
 categories: Basic_Server_Setup
 ---
 
