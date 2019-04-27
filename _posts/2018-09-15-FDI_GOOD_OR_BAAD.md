@@ -5,7 +5,7 @@ date:   2018-09-15 02:59:59
 categories: FDI
 ---
 
-<!DOCTYPE html>
+
 <html>
 <head>
 <style>
