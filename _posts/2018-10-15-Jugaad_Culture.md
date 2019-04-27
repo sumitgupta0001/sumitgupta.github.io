@@ -2,7 +2,7 @@
 layout: post
 title:  "Jugaad Culture"
 date:   2018-10-15 02:59:59
-categories: Jugaad
+categories: Jugaad Culture
 ---
 
 
