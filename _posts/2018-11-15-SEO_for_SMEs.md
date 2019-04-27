@@ -40,12 +40,12 @@ div {
 
 
 <h4>5 reasons why every SME should consider taking SEO as their business growth strategy –</h4>
-<li>Attracts the target audience- SEO brings the traffic that has very high chances of becoming a potential loyal customer for your brand. Since it’s a pull based not push-based strategy, so customer churn rate is low in this case. For instance – Kapso Business Services, has its own dedicated SEO team that make sure Kapso always comes first when people are looking for business brokers.</li>
-<li>Increased Return On Investment- SEO is the most effective marketing tool and cannot be compared to other existing traditional marketing tools. It has proven proficiency to deliver long-term and higher return on investment.  It brings the target audience to your website.</li>
-<li>Build Brand Awareness – One of the benefits of getting higher ranking on the search engine result page is brand awareness. When your site appears on the first page of major search engine than your potential customers are more likely to trust your brand. </li>
+<li><b>Attracts the target audience-</b> SEO brings the traffic that has very high chances of becoming a potential loyal customer for your brand. Since it’s a pull based not push-based strategy, so customer churn rate is low in this case. For instance – Kapso Business Services, has its own dedicated SEO team that make sure Kapso always comes first when people are looking for business brokers.</li>
+<li><b>Increased Return On Investment-</b> SEO is the most effective marketing tool and cannot be compared to other existing traditional marketing tools. It has proven proficiency to deliver long-term and higher return on investment.  It brings the target audience to your website.</li>
+<li><b>Build Brand Awareness –</b> One of the benefits of getting higher ranking on the search engine result page is brand awareness. When your site appears on the first page of major search engine than your potential customers are more likely to trust your brand. </li>
 
-<li>Bypass Competition- Lets take an example of two businesses that are in the same industry, selling similar products at similar prices. One of them has an optimized website while the other the other has a non-optimized website. So, which company do you think will attract more customers to their website from local searches?</li>
-<li>Helps you put up with the competition - SEO helps you as a small business owner counter stiff completion that may adversely affect your business. Having a better-optimized site than others that is likable by Google helps you move up the ranking ladder and be able to compete favourably with other existing businesses.</li>
+<li><b>Bypass Competition- </b>Lets take an example of two businesses that are in the same industry, selling similar products at similar prices. One of them has an optimized website while the other the other has a non-optimized website. So, which company do you think will attract more customers to their website from local searches?</li>
+<li><b>Helps you put up with the competition -</b> SEO helps you as a small business owner counter stiff completion that may adversely affect your business. Having a better-optimized site than others that is likable by Google helps you move up the ranking ladder and be able to compete favourably with other existing businesses.</li>
 
 </p>
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Developing Keyword Strategy"
-date:   2018-10-15 02:59:59
+date:   2018-10-30 02:59:59
 categories: Keyword Strategy
 ---
 

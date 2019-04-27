@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Innovative Business Ideas"
-date:   2018-11-15 02:59:59
+date:   2018-11-30 02:59:59
 categories: Innovative Business Ideas
 ---
 
@@ -18,7 +18,7 @@ div {
 <body>
 
 
-<img src="/img/seo.jpg" class="img-responsive" alt="">
+<img src="/img/innovative-business-ideas.jpg" class="img-responsive" alt="">
 <p>
 	
 
