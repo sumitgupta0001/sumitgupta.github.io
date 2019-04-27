@@ -32,16 +32,18 @@ div {
 
 <p><h4>Increased Website Traffic</h4>
 Blogging is a medium through which you create relevant content for your website audience, like what Kapso is doing. It just not help the ones who are interested in buying and selling a website but also help others who are interested in reading business updates. It has been found that Small businesses with blogs generate 126% more leads than their competition. 
+<p>
 <h4>SEO benefits</h4>
 I’ll get right to the point. Blogging will boost your search engine optimization (SEO). If your business is going to be relevant to Google or other search engines, creating new content is key. Companies that blog regularly have 97% more inbound links. But you should have a strategy to when and what your business will be posting. For example, don’t post about food if you’re a marketing company and don’t post about marketing if you’re a restaurant.
-
+</p>
 
 <p>Always use keywords or key phrases in your blogs to make them more searchable! Moreover, interesting content is one of the top 3 reasons people follow brands on social media. </p>
-<h4>Helps to Become an Industry Leader</h4>
-Ever wonder that blogging can even make you an industry leader as well.  By posting blogs that are designed for your market, you will show your target audience how knowledgeable and informative you are in that industry. For instance, if you have carefully noticed OnePlus cell phone manufacturers, they start writing blogs about their new products, technology being used, special feature etc. This not only informs the audience about OnePlus new handset but also makes the loyal customer for the company. They will wait patiently for the product to hit the market and then those leads gets converted into purchases.
-<h4>Customer, Consumer, or Client Relationships</h4>
-People love reading blogs. Whether they are reading to learn how to solve a specific problem, figure out how to do something, or just to stay informed about a certain topic. Blogs create and strengthen the bond between customer, consumer, or client and brand. Your audience can learn about your brand from the comfort of their desktop or mobile device. This can help build consumers’ trust because you are now becoming an accessible and proper source of information. Your audience or potential audience likes to be informed, and that is what blogging on a consistent basis will do.
+<p><h4>Helps to Become an Industry Leader</h4>
+Ever wonder that blogging can even make you an industry leader as well.  By posting blogs that are designed for your market, you will show your target audience how knowledgeable and informative you are in that industry. For instance, if you have carefully noticed OnePlus cell phone manufacturers, they start writing blogs about their new products, technology being used, special feature etc. This not only informs the audience about OnePlus new handset but also makes the loyal customer for the company. They will wait patiently for the product to hit the market and then those leads gets converted into purchases.</p>
+<p><h4>Customer, Consumer, or Client Relationships</h4>
 
+People love reading blogs. Whether they are reading to learn how to solve a specific problem, figure out how to do something, or just to stay informed about a certain topic. Blogs create and strengthen the bond between customer, consumer, or client and brand. Your audience can learn about your brand from the comfort of their desktop or mobile device. This can help build consumers’ trust because you are now becoming an accessible and proper source of information. Your audience or potential audience likes to be informed, and that is what blogging on a consistent basis will do.
+</p>
 </p>
 
 
