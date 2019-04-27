@@ -7,7 +7,7 @@ categories: FDI
 
 <img src="/img/FDI-in-India.jpg" class="img-responsive" alt="">
 
-<p>Recently, we heard news of SoftBank keening to invest $2-3 billion in Reliance Jio. Softbank already has huge stake in India businesses. Naming some – Ola, Snapdeal, Paytm, Oyo and many more. Does our Make in India have a clause where we grow our businesses and sell those to these foreign players? Or are we incompetent to run our businesses without these foreign intrusions? Do we really need to rely on FDI for our economy needs?</p>
+<p align="justify">Recently, we heard news of SoftBank keening to invest $2-3 billion in Reliance Jio. Softbank already has huge stake in India businesses. Naming some – Ola, Snapdeal, Paytm, Oyo and many more. Does our Make in India have a clause where we grow our businesses and sell those to these foreign players? Or are we incompetent to run our businesses without these foreign intrusions? Do we really need to rely on FDI for our economy needs?</p>
 
 <p>I believe No, we should not over rely on FDI. Here are my logical arguments:</p>
 
