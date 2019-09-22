@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Jugaad Culture"
-date:   2018-10-15 02:59:59
+date:   2019-07-30 02:59:59
 categories: Jugaad Culture
 ---
 

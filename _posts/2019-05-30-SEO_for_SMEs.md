@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "SEO for SMEs"
-date:   2018-11-15 02:59:59
+date:   2019-05-30 02:59:59
 categories: SEO for SMEs
 ---
 
